@@ -4,19 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoggedInPage</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/review_style.css">
 </head>
 <body>
-     <!-- Welcome panel -->
-     <div id="welcome_panel" class="fade-in">
-        <h1>Welcome to MoraviYum!</h1>
-        <p id="loading_message">Preparing the menu<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></p>
-    </div>
+    <!-- Welcome panel -->
+    <!--
+         <div id="welcome_panel" class="fade-in">
+            <h1>Welcome to MoraviYum!</h1>
+            <p id="loading_message">Preparing the menu<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></p>
+        </div>
+    
+        <div class="signin_container fade-in" id="signin_panel">
+            <h1 id="moraviyum_welcome">Welcome {{ user_name }} </h1>
+            <a href="/logout"><button id="logout_button" >Log out</button></a>
+        </div>
+    -->
+    <h2>Select Your Preferences</h2>
+<div class="dropdown_container" id="dropdown_panel"></div>
+   <!--- <label for="dropdown1">Option 1:</label>  -->
+    <select id="dropdown1">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
 
-    <div class="signin_container fade-in" id="signin_panel">
-        <h1 id="moraviyum_welcome">Welcome {{ user_name }} </h1>
-        <a href="/logout"><button id="logout_button" >Log out</button></a>
-    </div>
+    <label for="dropdown2">Option 2:</label>
+    <select id="dropdown2">
+        <option value="optionA">Option A</option>
+        <option value="optionB">Option B</option>
+        <option value="optionC">Option C</option>
+    </select>
+</div>
 
 </body>
 </html>
