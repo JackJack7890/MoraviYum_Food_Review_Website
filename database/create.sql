@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS foods (
 
 CREATE TABLE IF NOT EXISTS reviews (
     review_id INT(5),
-    user_email VARCHAR(255),
+    user_id VARCHAR(50),
     food_id INT(5),
     rating INT(1),
     review TEXT,
