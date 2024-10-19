@@ -6,7 +6,14 @@
     <title>LoggedInPage</title>
 </head>
 <body>
+     <!-- Welcome panel -->
+     <div id="welcome_panel" class="fade-in">
+        <h1>Welcome to MoraviYum!</h1>
+        <p id="loading_message">Preparing the menu<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></p>
+    </div>
+
     <div class="signin_container fade-in" id="signin_panel">
         <h1 id="moraviyum_welcome">Welcome {{ user_name }} </h1>
+        <a href="/logout"><button id="logout_button" >Log out</button></a>
 </body>
 </html>
