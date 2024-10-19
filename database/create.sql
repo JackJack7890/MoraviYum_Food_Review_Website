@@ -4,6 +4,12 @@ CREATE DATABASE IF NOT EXISTS MoraviYum;
 USE MoraviYum;
 
 -- Create tables
+CREATE TABLE IF NOT EXISTS session ( 
+    user_id VARCHAR(50),
+    username VARCHAR(50),
+    email VARCHAR(50)
+);
+
 CREATE TABLE IF NOT EXISTS foods (
     vendor VARCHAR(255),
     food_name VARCHAR(255),
