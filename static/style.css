@@ -29,7 +29,6 @@ body {
 #moraviyum_welcome {
     font-family: cursive;
     color: #0a2682;
-
 }
 
 h1 {
@@ -72,7 +71,6 @@ h2 {
   cursor: pointer;
   font-size: 1em;
   margin-top: 10px;
-  
 }
 
 #login_button:hover {
@@ -122,4 +120,38 @@ h2 {
   }
 }
 
+#submit_button {
+  background-color: #0c37c2;
+  color: white;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+}
 
+#submit_button:hover {
+  background-color: #0a2682;
+}
+
+#submit_button:active {
+  background-color: #0a2682;
+}
+
+#submit_button:focus {
+  outline: none;
+}
+
+#moraviyum_new_user {
+  font-family: poppins;
+  color: #0a2682;
+}
+
+#username_input {
+  padding: 15px;
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

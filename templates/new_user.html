@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Username</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
     <div class="signin_container fade-in" id="signin_panel">
-        <h1 id="moraviyum_welcome">Welcome new user: {{ user_name }} </h1>
+        <h1 id="moraviyum_new_user">Welcome new user: {{ user_name }} </h1>
+        <input type="text" id="username_input" placeholder="Enter your username">
+        <a href="/review"><button id="submit_button">Submit</button></a>
 </body>
 </html>
