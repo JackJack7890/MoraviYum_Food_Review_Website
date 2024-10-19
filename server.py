@@ -71,10 +71,8 @@ def get_user_handle(email):
 
     use_db = f"USE {os.getenv('MYSQL_DATABASE')}"
     cursor.execute(use_db)
-    print("EMAIL:", email)
     cursor.execute("SELECT user_handle FROM usernames WHERE email = %s", (email,))
     user_handle = cursor.fetchone()
-    print("USER HANDLE:", user_handle)
 
     cursor.close()
     connection.close()
