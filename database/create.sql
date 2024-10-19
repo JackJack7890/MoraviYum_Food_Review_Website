@@ -10,6 +10,11 @@ CREATE TABLE IF NOT EXISTS session (
     email VARCHAR(50)
 );
 
+CREATE TABLE IF NOT EXISTS usernames (
+    email VARCHAR(50),
+    user_handle VARCHAR(50)
+);
+
 CREATE TABLE IF NOT EXISTS foods (
     vendor VARCHAR(255),
     food_name VARCHAR(255),
