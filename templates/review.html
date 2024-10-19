@@ -9,14 +9,23 @@
 <body>
      <!-- Welcome panel -->
      <div id="welcome_panel" class="fade-in">
-        <h1>Welcome to MoraviYum!</h1>
-        <p id="loading_message">Preparing the menu<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></p>
+        <h1 id="welc_yum">Welcome to MoraviYum!</h1>
+        <h3 id="loading_message">Preparing the menu<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></h3>
     </div>
 
-    <div class="signin_container fade-in" id="signin_panel">
+    <div class="signin_container fade-in" id="review_panel" style="display: none;">
         <h1 id="moraviyum_welcome">Welcome {{ user_name }} </h1>
-        <a href="/logout"><button id="logout_button" >Log out</button></a>
+        <a href="/logout"><button id="logout_button">Log out</button></a>
     </div>
 
+    <script>
+        // Wait for 3 seconds, then switch from the welcome panel to the review panel
+        setTimeout(function() {
+            // Hide the welcome panel
+            document.getElementById('welcome_panel').style.display = 'none';
+            // Show the review panel
+            document.getElementById('review_panel').style.display = 'block';
+        }, 3000);  // 3000 milliseconds = 3 seconds
+    </script>
 </body>
 </html>

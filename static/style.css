@@ -53,6 +53,16 @@ h2 {
   max-width: 100%;
 }
 
+#review_panel {
+  padding: 4rem;
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 750px;
+  max-width: 100%;
+}
+
 
 #moravian_star_image {
     display: block;
@@ -65,7 +75,7 @@ h2 {
 #login_button {
   background-color: #0c37c2;
   color: white;
-  padding: 15px 60px;
+  padding: 15px 100px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -152,6 +162,16 @@ h2 {
 #welcome_panel {
   text-align: center;
   padding: 50px;
+}
+
+#welc_yum {
+  color: #e3e4ea;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#loading_message {
+  color: #e3e4ea;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .dot {
