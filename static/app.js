@@ -1,10 +1,28 @@
-const review_panel = document.getElementById('review_panel');
-const welcome_panel = document.getElementById('welcome_panel');
+var submit_button = document.getElementById("submit_button")
 
-setTimeout(function() {
-    // Hide the welcome panel
-    document.getElementById('welcome_panel').style.display = 'none';
-    // Show the review panel
-    document.getElementById('review_panel').style.display = 'block';
-}, 3000);  // 3000 milliseconds = 3 seconds
+function submit() {
+    var user_handle = document.getElementById("username_input").value
+    if (user_handle === "") {
+        alert("Please enter a username")
+        return;
+    }
+    fetch('/store_user_handle', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            user_handle: user_handle
+        }),
+    })
+    var path = window.location
+    var endpoint = "reviw"
+    return `${path}.origin/${endpoint}`
+}
+
+submit_button.addEventListener('click', () => {
+    submit()
+    const BASE_URL = window.location.origin
+    window.location.href = BASE_URL + '/review';
+})
 
