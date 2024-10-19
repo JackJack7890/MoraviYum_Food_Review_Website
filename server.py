@@ -55,6 +55,10 @@ def login_is_required(function):
 def index():
     return render_template('index.html')
 
+@app.route('/moravian_star.png', methods=['GET'])
+def moravian_star():
+    return app.send_static_file('moravian_star.png')
+
 @app.route('/review')
 @login_is_required # Decorator to check if the user is logged in
 def review():
@@ -108,6 +112,12 @@ def login():
     redirect_uri = url_for('authorize', _external=True)
     session.pop('is_faculty', None) # Remove the faculty flag if it exists since this is regular student login
     return oauth.google.authorize_redirect(redirect_uri)
+
+@app.route('/logout') 
+def logout():
+    for key in list(session.keys()): # Clear all keys from the session data
+        session.pop(key)
+    return redirect('/')
 
 @app.route('/authorize')
 def authorize():
