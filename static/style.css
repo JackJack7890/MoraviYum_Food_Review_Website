@@ -6,6 +6,7 @@
 }
 
 body {
+
   background: linear-gradient(45deg, #071f6e, #012e80, #7f7f7f, #fff); /* Navy blue (#00205b) and silver (#7f7f7f) */
   background-size: 400% 400%;  /* Increased background size for smoother animation */
   animation: colorShift 17s ease infinite;
@@ -16,6 +17,7 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+
 }
 
 .container {
@@ -27,6 +29,7 @@ body {
 #moraviyum_welcome {
     font-family: cursive;
     color: #0a2682;
+
 }
 
 h1 {
@@ -52,13 +55,13 @@ h2 {
 }
 
 
-
 #moravian_star_image {
     display: block;
     margin: 0 auto; /* Centers the image */
     width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintains the aspect ratio */
 }
+
 
 #login_button {
   background-color: #0c37c2;
@@ -118,4 +121,5 @@ h2 {
     background-position: 0% 50%;
   }
 }
+
 
