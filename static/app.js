@@ -25,3 +25,4 @@ submit_button.addEventListener('click', () => {
     const BASE_URL = window.location.origin
     window.location.href = BASE_URL + '/review';
 })
+
