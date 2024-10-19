@@ -74,5 +74,5 @@ INSERT INTO foods (vendor, food_name, food_id, price, calories, avg_rating) VALU
 ('Starbucks', 'Dragon Drink Starbucks Refreshers® Beverage', 72, '$5.59/5.99', 130, NULL),
 ('Starbucks', 'Strawberry Acai Starbucks Refreshers® Beverage', 73, '$5.59/5.99', 100, NULL),
 ('Starbucks', 'Mango Dragonfruit Starbucks Refreshers® Beverage', 74, '$5.59/5.99', 90, NULL),
-('Starbucks', 'Iced Pumpkin Spice Latte', 75, 'FILL IN LATER', 370, NULL),
-('Starbucks', 'Iced Caramel Apple Cream Latte', 76, 'FILL IN LATER', 390, NULL);
+('Starbucks', 'Iced Pumpkin Spice Latte', 75, '$4.99', 370, NULL),
+('Starbucks', 'Iced Caramel Apple Cream Latte', 76, '$4.99', 390, NULL);
