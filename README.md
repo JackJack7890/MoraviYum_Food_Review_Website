@@ -1,7 +1,12 @@
-# MoraviYum_Food_Review_Website
+# MoraviYum Food Review Website
 
-Authors: 
- - Jack Drabic
- - Rafael Garcia Jr.
- - Christine Colvin
- - Michael Romero
+DESCRIPTION TBD.
+
+## System Architecture
+[ IMAGE TBD ]
+
+### Contributers
+- [Christine Colvin](https://github.com/christinecolvin)
+- [Jack Drabic](https://github.com/JackJack7890)
+- [Rafael Garcia Jr.](https://github.com/RGJ-713)
+- [Michael Romero](https://github.com/MichaelRomero1)
