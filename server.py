@@ -62,14 +62,47 @@ def moravian_star():
 @app.route('/review')
 @login_is_required # Decorator to check if the user is logged in
 def review():
-    user_name = session.get('name')
-    return render_template('review.html', user_name=user_name)
+    email = session.get('email').strip()
+    user_handle = get_user_handle(email)
+    return render_template('review.html', user_handle=user_handle)
+
+def get_user_handle(email):
+    cursor, connection = connectToMySQL()
+
+    use_db = f"USE {os.getenv('MYSQL_DATABASE')}"
+    cursor.execute(use_db)
+    cursor.execute("SELECT user_handle FROM usernames WHERE email = %s", (email,))
+    user_handle = cursor.fetchone()
+
+    cursor.close()
+    connection.close()
+
+    return user_handle[0]
 
 @app.route('/new_user')
 @login_is_required # Decorator to check if the user is logged in
 def new_user():
     user_name = session.get('name')
     return render_template('new_user.html', user_name=user_name)
+
+@app.route('/store_user_handle', methods=['POST'])
+def store_user_handle():
+    user_handle = request.get_json()
+    user_handle = user_handle['user_handle']
+    cursor, connection = connectToMySQL()
+
+    use_db = f"USE {os.getenv('MYSQL_DATABASE')}"
+    cursor.execute(use_db)
+
+    cursor.execute("INSERT INTO usernames (email, user_handle) VALUES (%s, %s)", (session['email'], user_handle))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return jsonify({'message': 'User handle saved successfully!'}), 200
+
+
 
 @app.route('/login')
 def login():
