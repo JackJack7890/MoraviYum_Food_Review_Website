@@ -254,3 +254,44 @@ button {
 button:hover {
   background-color: #01358f; /* Slight hover effect */
 }
+
+#image_container {
+  position: absolute; /* or fixed if you want it relative to the viewport */
+  top: 0;
+  left: 0;
+}
+
+#image_container2 {
+  position: absolute; /* or fixed if you want it relative to the viewport */
+  top: 0;
+  right: 0;
+}
+
+#dropdown_panel {
+  position: absolute; /* or fixed if you want it relative to the viewport */
+  top: 20%;
+  right: 30%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 20px;
+  font-size: 14px;
+}
+
+#dropdown_panel h2 {
+  font-size: 16px; /* Reduces the size of the heading */
+  margin-bottom: 20px; /* Adds space below the heading */
+}
+
+.dropdown-item {
+  margin-bottom: 8px; /* Adds space between dropdown items */
+}
+
+button {
+  padding: 5px 10px; /* Shrinks button size */
+  font-size: 14px; /* Adjusts button text size */
+}
+
+select {
+  font-size: 14px; /* Adjusts dropdown option text size */
+  width: 100%; /* Ensures the dropdown fits the container width */
+}
