@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoggedInPage</title>
     <link rel="stylesheet" type="text/css" href="/static/review_style.css">
-    
 </head>
 <body>
     
-    <div id="image_container"></div>
+    <!-- Image container 1 -->
+    <div id="image_container">
         <img src="/moravian_star.png" alt="moravian_star" id="moravian_star_image">
     </div>
+
+
 
     <!-- Welcome panel -->
     <div id="welcome_panel" class="fade-in">
@@ -27,7 +29,7 @@
         <div class="dropdown_container">
             <div class = "dropdown-item">
                 <button id="activateDropdown1">B & G</button>
-                <select id="dropdown1">
+                <select id="dropdown1" style="display: none;">
                     <option value="Cru5h">Cru5h</option>
                     <option value="Garbanzos">Garbanzos</option>
                     <option value="Hissho Sushi">Hissho Sushi</option>
@@ -35,7 +37,7 @@
             </div>
             <div class = "dropdown-item">
                 <button id="activateDropdown2">Delight's Cafe</button>
-                <select id="dropdown2">
+                <select id="dropdown2" style="display: none;">
                     <option value="Starbucks">Starbucks</option>
                     <option value="Zime">Zime</option>
                     <option value="Natural">Natural</option>
@@ -44,22 +46,33 @@
         </div>
     </div>
 
-    
-
+ <!-- Image container 2 (initially hidden) -->
+ <div id="image_container2" style="display: none;">
+    <img src="/user_profile.png" alt="user_profile" id="user_profile_image">
+</div>
 
     <script>
         // Wait for 3 seconds, then switch from the welcome panel to the dropdown panel
         setTimeout(function() {
             // Hide the welcome panel
             document.getElementById('welcome_panel').style.display = 'none';
+
             // Show the dropdown panel
             document.getElementById('dropdown_panel').style.display = 'block';
+            
+            // Show the first image container
             document.getElementById('image_container').style.display = 'block';
+
+            // Show the second image container
+            document.getElementById('image_container2').style.display = 'block';
+
+            // Ensure dropdowns are hidden initially
             document.getElementById('dropdown1').style.display = 'none';
             document.getElementById('dropdown2').style.display = 'none';
             
         }, 3000);  // 3000 milliseconds = 3 seconds
     </script>
+
     <script src="/static/review_app.js"></script>
 
 </body>

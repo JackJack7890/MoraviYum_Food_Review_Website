@@ -59,6 +59,10 @@ def index():
 def moravian_star():
     return app.send_static_file('moravian_star.png')
 
+@app.route('/user_profile.png', methods=['GET'])
+def user_profile():
+    return app.send_static_file('user_profile.png')
+
 @app.route('/review')
 @login_is_required # Decorator to check if the user is logged in
 def review():
