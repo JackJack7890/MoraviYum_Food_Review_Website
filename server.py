@@ -66,6 +66,106 @@ def review():
     user_handle = get_user_handle(email)
     return render_template('review.html', user_handle=user_handle)
 
+@app.route('/get_reviews', methods=['GET'])
+def get_reviews():
+    cursor, connection = connectToMySQL()
+    #cursor = conn.cursor(dictionary=True)  # Fetch as dictionary to make JSON conversion easier
+
+    use_db = f"USE {os.getenv('MYSQL_DATABASE')}"
+    cursor.execute(use_db)
+
+    cursor = connection.cursor(dictionary=True)
+
+    cursor.execute('SELECT user_id, food_id, rating, review, time_stamp FROM reviews')
+    reviews = cursor.fetchall()
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return jsonify(reviews)
+
+@app.route('/fetch_vendor_foods', methods=['GET'])
+def fetch_vendor_foods():
+    '''
+    Grabs the food data of a specified vendor from the database and returns it.
+    '''
+    try:
+        # Retrieve vendor name from query parameters
+        vendor_name = request.args.get('vendor', None)
+        
+        if vendor_name is None:
+            return jsonify({"error": "Vendor name is required"}), 400
+
+        cursor, connection = connectToMySQL()
+        use_db = "USE MoraviYum;"
+        cursor.execute(use_db)
+
+        query = """
+        SELECT 
+            f.food_name, 
+            f.food_id, 
+            f.price, 
+            f.calories, 
+            f.avg_rating, 
+            i.image_url
+        FROM 
+            foods f
+        LEFT JOIN 
+            images i ON f.food_id = i.food_id
+        WHERE 
+            f.vendor = %s;
+        """
+
+        cursor.execute(query, (vendor_name,))
+        rows = cursor.fetchall()
+        connection.close()
+        
+        # Format the result into a list of dictionaries for easier consumption by the client
+        foods = []
+        for row in rows:
+            food = {
+                "food_name": row[0],
+                "food_id": row[1],
+                "price": row[2],
+                "calories": row[3],
+                "avg_rating": row[4],
+                "image_url": row[5]
+            }
+            foods.append(food)
+        
+        return jsonify(foods)
+    
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/submit_review', methods=['POST'])
+def submit_review():
+    # Get data from the request
+    user_id = request.json.get('user_id')
+    food = request.json.get('food')
+    rating = request.json.get('rating')
+    review_text = request.json.get('review')
+
+    # Connect to the database and insert the review
+    cursor, connection = connectToMySQL()
+
+    use_db = f"USE {os.getenv('MYSQL_DATABASE')}"
+    cursor.execute(use_db)
+
+    cursor.execute('''
+        INSERT INTO reviews (user_id, food_id, rating, review)
+        VALUES (%s, %s, %s, %s)
+    ''', (user_id, food, rating, review_text))
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return jsonify({'message': 'Review submitted successfully!'}), 200
+
 def get_user_handle(email):
     cursor, connection = connectToMySQL()
 

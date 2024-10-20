@@ -40,6 +40,63 @@
         </div>
     </div>
 
+    <style>
+        .scrollable-container {
+        max-height: 400px;
+        overflow-y: scroll;
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 100%; /* Adjust width as necessary */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .review-table {
+        width: 100%;  /* Table takes full width of the container */
+    }
+    </style>
+
+    <div class = "scrollable-container">
+        <div id="review_container" class="fade-in">
+            <h2 id="review_header">Reviews</h2>
+            <div id="review_list">
+                <!-- Reviews will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <button id="show_review_form">Add Review</button>
+
+    <h3>Add a Review</h3>
+    <form id="reviewForm">
+    <input type="hidden" id="user_id" value="{{ user_handle }}">
+
+    <label for="food">Food ID:</label>
+    <input type="text" id="food" required><br>
+
+    <label for="rating">Rating (1-5):</label>
+    <input type="number" id="rating" min="1" max="5" required><br>
+
+    <label for="review_text">Review:</label>
+    <textarea id="review_text" rows="4" required></textarea><br>
+
+    <button type="submit">Submit Review</button>
+    </form>
+
+
     <script>
         // Wait for 3 seconds, then switch from the welcome panel to the dropdown panel
         setTimeout(function() {
