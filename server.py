@@ -83,6 +83,7 @@ def get_user_handle(email):
 @login_is_required # Decorator to check if the user is logged in
 def new_user():
     user_name = session.get('name')
+    print("we have reached this point SUCCESSFULLY")
     return render_template('new_user.html', user_name=user_name)
 
 @app.route('/store_user_handle', methods=['POST'])
@@ -151,6 +152,7 @@ def authorize():
             cursor.execute(query_insert, (session['google_id'], session['name'], session['email']))
             cnx.commit()
             session['is_new_user'] = True
+          
 
     except mysql.connector.Error as err:
         print(f"Error during login: {err}")
