@@ -1,10 +1,10 @@
 # MoraviYum Food Review Website
 
-An online web application designed for Moravian University students to help each other out by sharing their thoughts and opinions on the various foods provided on campus.
+An online web application designed for Moravian University students to help each other out by sharing their thoughts and opinions on the various foods provided on campus!
 
 Project designed for the Lehigh Valley Collegiate Hackathon 2024.
 
-### Contributers
+## Contributers
 - [Christine Colvin](https://github.com/christinecolvin)
 - [Jack Drabic](https://github.com/JackJack7890)
 - [Rafael Garcia Jr.](https://github.com/RGJ-713)
@@ -23,6 +23,17 @@ Once a vendor is selected, they can then select the food they want to leave a re
 ![reviewpage](MoraviYum_review.png)
 
 ## What Was Used
-- HTML, CSS, JavaScript for web application and UI
-- MySQL database to store vendor information and reviews
-- S3 bucket to store images
+- HTML, CSS, and JavaScript were used for the UI
+- A MySQL database is used to store user accounts, food data, and review information
+- Images are stored in an S3 bucket
+- Google OAUTH is used for ensuring only Moravian students are allowed to sign-in
+
+## Accomplishments
+- Laying the foundations and functionality of the vendor/food selection and review
+- Successful set-up of the database with working images that correspond to each food item
+- Successful implementation of a user login/logout feature through OAUTH
+
+## Future Plans
+- A filtering feature to filter foods by rating, prices, calories, etc.
+- A "keyword" feature that lets users attribute certain descriptions to certain foods (ex: "PRO: Good price", "CON: Too many calories")
+
