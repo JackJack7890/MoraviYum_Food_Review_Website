@@ -143,7 +143,68 @@ h2 {
   }
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  
+}
+/* Style for the welcome panel */
+#welcome_panel {
+  text-align: center;
+  padding: 50px;
+}
 
+#welc_yum {
+  color: #e3e4ea;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#loading_message {
+  color: #e3e4ea;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.dot {
+  display: inline-block;
+  animation: bounce 1s infinite;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+#distributionPieChart {
+  margin-left: 20%;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+      opacity: 0;
+  }
+}
 
 #submit_button {
   background-color: #0c37c2;
@@ -165,8 +226,9 @@ h2 {
 }
 
 #moraviyum_new_user {
-  color: #0a2682;
+  color:#012e80;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  
 }
 
 #username_input {
@@ -215,16 +277,5 @@ h1 {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-.signin_container {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 20px;
-}
 
-@media (max-width: 600px) {
-  .signin_container {
-      width: 90%;
-      padding: 20px;
-  }
-}
 

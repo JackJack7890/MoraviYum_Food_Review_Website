@@ -190,3 +190,4 @@ logout_button.addEventListener('click', () => {
 profileimg.addEventListener('mouseleave', () => {
     logout_button.style.display = 'none';
 })
+
