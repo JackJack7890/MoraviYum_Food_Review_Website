@@ -89,6 +89,7 @@ def get_reviews():
 
     return jsonify(reviews)
 
+
 @app.route('/fetch_vendor_foods', methods=['GET'])
 def fetch_vendor_foods():
     '''
