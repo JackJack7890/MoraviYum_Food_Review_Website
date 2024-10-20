@@ -74,7 +74,7 @@
     </style>
 
     <div id = "scrollable-container" style="display: none;" class = "scrollable-container">
-        <div id="review_container" class="fade-in">
+        <div id="review_container" style="display: none;"  class="fade-in">
             <h2 id="review_header">Reviews</h2>
             <div id="review_list">
                 <!-- Reviews will be added here -->
@@ -82,10 +82,10 @@
         </div>
     </div>
 
-    <button id="show_review_form">Add Review</button>
+    <button id="show_review_form" style="display: none;" >Add Review</button>
 
-    <h3>Add a Review</h3>
-    <form id="reviewForm">
+    
+    <form id="reviewForm" style="display: none;" >
     <input type="hidden" id="user_id" value="{{ user_handle }}">
 
     <label for="food">Food ID:</label>
@@ -95,7 +95,7 @@
     <input type="number" id="rating" min="1" max="5" required><br>
 
     <label for="review_text">Review:</label>
-    <textarea id="review_text" rows="4" required></textarea><br>
+    <textarea id="review_text" style="display: none;" rows="4" required></textarea><br>
 
     <button type="submit">Submit Review</button>
     </form>
@@ -130,6 +130,8 @@
             document.getElementById('scrollable-container').style.display = 'block';
 
             document.getElementById('reviewForm').style.display = 'block';
+            document.getElementById('review_text').style.display = 'block';
+            document.getElementById('show_review_form').style.display = 'block';
 
             // Ensure dropdowns are hidden initially
             document.getElementById('dropdown1').style.display = 'none';
