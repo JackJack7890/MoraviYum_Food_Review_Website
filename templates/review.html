@@ -75,7 +75,7 @@
     }
     </style>
 
-    <div class = "scrollable-container">
+    <div id = "scrollable-container" class = "scrollable-container">
         <div id="review_container" class="fade-in">
             <h2 id="review_header">Reviews</h2>
             <div id="review_list">
@@ -121,6 +121,10 @@
 
             // Show the second image container
             document.getElementById('image_container2').style.display = 'block';
+
+            document.getElementById('review_container').style.display = 'block';
+
+            document.getElementById('reviewForm').style.display = 'block';
 
             // Ensure dropdowns are hidden initially
             document.getElementById('dropdown1').style.display = 'none';
