@@ -269,8 +269,8 @@ button:hover {
 
 #dropdown_panel {
   position: absolute; /* or fixed if you want it relative to the viewport */
-  top: 23.5%;
-  right: 1%;
+  top: 35%;
+  right: 5%;
   transform: translateX(-50%);
   width: 300px;
   padding: 1px;
