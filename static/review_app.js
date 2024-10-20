@@ -1,5 +1,7 @@
 var dropdown_button1 = document.getElementById("activateDropdown1")
 var dropdown_button2 = document.getElementById("activateDropdown2")
+var profileimg = document.getElementById("image_container2")
+var logout_button = document.getElementById("logout_button_container")
 
 var dropdown1 = document.getElementById("dropdown1")
 var dropdown2 = document.getElementById("dropdown2")
@@ -172,3 +174,19 @@ function populateReviewTable(reviews) {
     reviewList.appendChild(table);
 }
 
+profileimg.addEventListener('click', () => {
+    console.log("clicked the img")
+    logout_button.style.display = 'block';
+})
+
+logout_button.addEventListener('mouseover', () => {
+    logout_button.style.display = 'block';
+})
+
+logout_button.addEventListener('click', () => {
+    const BASE_URL = window.location.origin
+    window.location.href = BASE_URL + '/logout';
+})
+profileimg.addEventListener('mouseleave', () => {
+    logout_button.style.display = 'none';
+})
