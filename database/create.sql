@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS images (
 CREATE TABLE IF NOT EXISTS reviews (
     review_id INT(5),
     user_id VARCHAR(50),
-    food_id INT(5),
+    food_id VARCHAR(50),
     rating INT(1),
     review TEXT,
     time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP

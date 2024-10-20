@@ -73,7 +73,6 @@ def review():
 @app.route('/get_reviews', methods=['GET'])
 def get_reviews():
     cursor, connection = connectToMySQL()
-    #cursor = conn.cursor(dictionary=True)  # Fetch as dictionary to make JSON conversion easier
 
     use_db = f"USE {os.getenv('MYSQL_DATABASE')}"
     cursor.execute(use_db)
@@ -145,6 +144,28 @@ def fetch_vendor_foods():
         import traceback
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
+    
+@app.route('/menu/<vendor>')
+def menu(vendor):
+    cursor, connection = connectToMySQL()
+    use_db = f"USE {os.getenv('MYSQL_DATABASE')}"
+    cursor.execute(use_db)
+    query = '''SELECT f.food_name, f.price, f.calories, i.image_url
+               FROM foods f
+               LEFT JOIN images i ON f.food_id = i.food_id
+               WHERE f.vendor = %s'''
+    cursor.execute(query, (vendor,))
+    menu_items = cursor.fetchall()
+    # Convert the results to a list of dictionaries for JSON response
+    menu_list = [{'food_name': row[0], 'price': row[1], 'calories': row[2], 'image_url': row[3]} for row in menu_items]
+
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+    return jsonify(menu_list)
+
+
 
 @app.route('/submit_review', methods=['POST'])
 def submit_review():
@@ -185,7 +206,7 @@ def get_user_handle(email):
     if user_handle is None:
         # Handle case where no user_handle is found for the email
         print(f"No user_handle found for email: {email}")
-        abort(404)  # Optionally return a 404 error or handle it differently
+        abort(404) 
     else:
         return user_handle[0]
 
@@ -219,7 +240,6 @@ def store_user_handle():
 def login():
     google = oauth.create_client('google') # Create/get the google client above
     redirect_uri = url_for('authorize', _external=True)
-    session.pop('is_faculty', None) # Remove the faculty flag if it exists since this is regular student login
     return oauth.google.authorize_redirect(redirect_uri)
 
 @app.route('/logout') 
@@ -273,7 +293,7 @@ def authorize():
         cursor.close()
         cnx.close()
 
-    # Redirect based on the user type (faculty or student)
+    # Redirect based on the user type (new_user or old_user)
     if session.get('is_new_user'):
         return redirect('/new_user')
     else:
@@ -291,7 +311,6 @@ def connectToMySQL():
     cnx = mysql.connector.connect(user=MYSQL_USERNAME, password=MYSQL_PASSWORD,
                                   host=MYSQL_HOST,
                                   database=MYSQL_DB)
-    #Tried with user = root, password = password, host = most recent AWS ip
     cursor = cnx.cursor()
     return cursor, cnx
 

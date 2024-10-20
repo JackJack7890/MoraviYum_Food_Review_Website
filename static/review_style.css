@@ -185,13 +185,13 @@ h2 {
 #activateDropdown1:hover, #activateDropdown2:hover {
   background-color: #0a53a7; /* Slightly lighter blue on hover */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
-  transform: translateY(-3px); /* Slight upward movement */
+  /*transform: translateY(-3px);*/ /* Slight upward movement */
 }
 
 /* Active state for button press */
 #activateDropdown1:active, #activateDropdown2:active {
   background-color: #0e66c2; /* Even lighter blue when clicked */
-  transform: translateY(1px); /* Slight downward movement on click */
+  /*transform: translateY(1px);*/ /* Slight downward movement on click */
 }
 
 /* Ensure the dropdown adjusts its width dynamically */
@@ -270,7 +270,7 @@ button:hover {
 #dropdown_panel {
   position: absolute; /* or fixed if you want it relative to the viewport */
   top: 23.5%;
-  right: 30%;
+  right: 1%;
   transform: translateX(-50%);
   width: 300px;
   padding: 1px;

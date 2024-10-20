@@ -87,8 +87,8 @@ document.getElementById('reviewForm').addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent the default form submission
 
     // Gather form data
-    const user_id = document.getElementById('user_id').value; // Get user_id from hidden input
-    const food = parseInt(document.getElementById('food').value);
+    const user_id = document.getElementById('user_id').value;
+    const food = document.getElementById('food').value;
     const rating = parseInt(document.getElementById('rating').value);
     const review_text = document.getElementById('review_text').value;
 
@@ -106,10 +106,10 @@ document.getElementById('reviewForm').addEventListener('submit', (event) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newReview)}) // Convert the object to JSON
+        body: JSON.stringify(newReview)})
         .then(data => {
             document.getElementById('reviewForm').reset();
-            document.getElementById('reviewForm').style.display = 'none'; // Hide the form after submission
+            document.getElementById('reviewForm').style.display = 'none';
     })
 });
 
@@ -127,13 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
 function populateReviewTable(reviews) {
     const reviewList = document.getElementById('review_list');
 
-    // Create a table element
+    // table element
     const table = document.createElement('table');
-    table.classList.add('review-table');  // Optional: Add a class for styling
+    table.classList.add('review-table');
 
-    // Create table header
+    // table header
     const headerRow = document.createElement('tr');
-    const headers = ['User ID', 'Food ID', 'Rating', 'Review', 'Timestamp'];
+    const headers = ['User ID', 'Food', 'Rating', 'Review', 'Timestamp'];
     headers.forEach(headerText => {
         const header = document.createElement('th');
         header.textContent = headerText;
@@ -170,7 +170,6 @@ function populateReviewTable(reviews) {
         table.appendChild(row);
     });
 
-    // Add the table to the review list container
     reviewList.appendChild(table);
 }
 

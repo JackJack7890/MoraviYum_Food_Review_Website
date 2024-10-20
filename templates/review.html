@@ -24,17 +24,17 @@
     <!-- Dropdown options panel (initially hidden) -->
     <div id="dropdown_panel" style="display: none;" class="dropdown_container">
         <div class="dropdown_container">
-            <div class = "dropdown-item">
+            <div class="dropdown-item">
                 <button id="activateDropdown1">B & G</button>
-                <select id="dropdown1" style="display: none;">
+                <select id="dropdown1" style="display: none;" onchange="fetchMenu(this.value)">
                     <option value="Cru5h">Cru5h</option>
                     <option value="Garbanzos">Garbanzos</option>
                     <option value="Hissho Sushi">Hissho Sushi</option>
                 </select>
             </div>
-            <div class = "dropdown-item">
+            <div class="dropdown-item">
                 <button id="activateDropdown2">Delight's Cafe</button>
-                <select id="dropdown2" style="display: none;">
+                <select id="dropdown2" style="display: none;" onchange="fetchMenu(this.value)">
                     <option value="Starbucks">Starbucks</option>
                     <option value="Zime">Zime</option>
                     <option value="Natural">Natural</option>
@@ -42,6 +42,30 @@
             </div>
         </div>
     </div>
+    
+    <!-- Menu display section -->
+    <div id="menu_container" style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+        <!-- Menu items will be injected here by JavaScript -->
+    </div>
+    
+    
+    <script>
+        function fetchMenu(vendor) {
+            fetch(`/menu/${vendor}`)
+                .then(response => response.json())
+                .then(data => {
+                    let menuHTML = '<h3>Menu for ' + vendor + '</h3>';
+                    data.forEach(item => {
+                        menuHTML += `<p>${item.food_name}: ${item.price} - ${item.calories} calories</p>`;
+                        if (item.image_url) {
+                            menuHTML += `<img src="${item.image_url}" alt="${item.food_name}" style="width:100px;height:auto;"><br>`;
+                        }
+                    });
+                    document.getElementById('menu_container').innerHTML = menuHTML;
+                })
+                .catch(error => console.error('Error fetching menu:', error));
+        }
+        </script>
 
     <style>
         .scrollable-container {
@@ -80,6 +104,8 @@
             </div>
         </div>
     </div>
+    <!--<button id="ShowReviewsButton">Show reviews</button>
+    <button id="backtomenubutton">Back to menus</button>-->
 
     <button id="show_review_form" style="display: none;" >Add Review</button>
 
@@ -109,6 +135,7 @@
 </div>
 
 
+
     <script>
         // Wait for 3 seconds, then switch from the welcome panel to the dropdown panel
         setTimeout(function() {
@@ -127,6 +154,7 @@
             document.getElementById('review_container').style.display = 'block';
 
             document.getElementById('scrollable-container').style.display = 'block';
+            document.getElementById('menu_container').style.display = 'block';
 
             document.getElementById('review_text').style.display = 'block';
             document.getElementById('show_review_form').style.display = 'block';
