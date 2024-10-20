@@ -6,17 +6,23 @@
 }
 
 body {
-    background: linear-gradient(45deg, #071f6e, #012e80, #7f7f7f, #fff); 
-    background-size: 400% 400%;  
-    animation: colorShift 15s ease infinite;
+    background: linear-gradient(45deg, #071f6e, #012e80, #7f7f7f, #fff); /* Navy blue (#00205b) and silver (#7f7f7f) */
+    background-size: 400% 400%;  /* Increased background size for smoother animation */
+    animation: colorShift 17s ease infinite;
     font-family: "Poppins", sans-serif;
-    display: flex;
-    align-items: flex-start; /* Align content to the top */
-    justify-content: center;
-    height: 100vh;
     margin: 0;
     overflow: hidden;
-    padding-top: 20px; /* Optional: Add some space from the top */
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    align-items: flex-start; /* Align children to the start of the cross axis */
+  }
+  
+  .header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Distribute space between items */
+    padding: 10px;
+    box-sizing: border-box;
   }
 
 .container {
@@ -30,16 +36,47 @@ body {
     color: #0a2682;
 }
 
+h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
 h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    margin: 20px 0;
-    padding-top: 20px;
-    text-align: top;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 0 10px;
+}
+
+#signin_panel {
+  padding: 4rem;
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 750px;
+  max-width: 100%;
+}
+
+#dropdown_panel {
+    padding: 4rem;
+    background-color: #fff;
+    border-radius: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 750px;
+    max-width: 100%;
   }
   
-  .dropdown_container {
-    margin-top: 20px;
-    padding: 20px;
-    text-align: left;
+.dropdown_container {
+     display: flex;
+     justify-content: space-between;
+     margin: 20px 0;
+  }
+  
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
   }
