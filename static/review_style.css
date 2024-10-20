@@ -67,123 +67,16 @@ h2 {
     width: 750px;
     max-width: 100%;
   }
-
-
-#moravian_star_image {
-    display: block;
-    margin: 0 auto; /* Centers the image */
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* Maintains the aspect ratio */
-}
-
-
-#login_button {
-  background-color: #0c37c2;
-  color: white;
-  padding: 15px 60px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  margin-top: 10px;
-}
-
-#login_button:hover {
-  background-color: #0a2682;
-}
-
-#login_button:active {
-  background-color: #0a2682;
-}
-
-#login_button:focus {
-  outline: none;
-}
-
-#signup_button {
-  background-color: #0c37c2;
-  color: white;
-  padding: 15px 60px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  margin-top: 10px;
-}
-
-#signup_button:hover {
-  background-color: #0a2682;
-}
-
-#signup_button:active {
-  background-color: #0a2682;
-}
-
-#signup_button:focus {
-  outline: none;
-}
-
-@keyframes colorShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-#submit_button {
-  background-color: #0c37c2;
-  color: white;
-  padding: 15px 60px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  margin-top: 10px;
-}
-
-#submit_button:hover {
-  background-color: #0a2682;
-}
-
-#submit_button:active {
-  background-color: #0a2682;
-}
-
-#submit_button:focus {
-  outline: none;
-}
-
-#moraviyum_new_user {
-  font-family: poppins;
-  color: #0a2682;
-}
-
-#username_input {
-  padding: 15px;
-  width: 100%;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
+  
 .dropdown_container {
-    padding: 4rem;
-    background-color: #fff;
-    border-radius: 100px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    width: 750px;
-    max-width: 100%;
-}
-
+     display: flex;
+     justify-content: space-between;
+     margin: 20px 0;
+  }
+  
 .dropdown-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 10px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+  }
