@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoggedInPage</title>
+    <link rel="stylesheet" type="text/css" href="/static/review_style.css">
     <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
+    
 
     <!-- Welcome panel -->
     <div id="welcome_panel" class="fade-in">
         <h1 id="welc_yum">Welcome to MoraviYum!</h1>
         <h3 id="loading_message">Preparing the menu<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></h3>
     </div>
+    
 
     <!-- Dropdown options panel (initially hidden) -->
-    <div id="dropdown_panel" style="display: none;">
-        <h2>Select Your Preferences</h2>
+    <div id="dropdown_panel" style="display: none;" class="dropdown_container">
+        <h2 id="select_preference">Select Your Preferences</h2>
         <div class="dropdown_container">
             <label for="dropdown1">Option 1:</label>
             <select id="dropdown1">

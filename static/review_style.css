@@ -6,17 +6,23 @@
 }
 
 body {
-    background: linear-gradient(45deg, #071f6e, #012e80, #7f7f7f, #fff); 
-    background-size: 400% 400%;  
-    animation: colorShift 15s ease infinite;
+    background: linear-gradient(45deg, #071f6e, #012e80, #7f7f7f, #fff); /* Navy blue (#00205b) and silver (#7f7f7f) */
+    background-size: 400% 400%;  /* Increased background size for smoother animation */
+    animation: colorShift 17s ease infinite;
     font-family: "Poppins", sans-serif;
-    display: flex;
-    align-items: flex-start; /* Align content to the top */
-    justify-content: center;
-    height: 100vh;
     margin: 0;
     overflow: hidden;
-    padding-top: 20px; /* Optional: Add some space from the top */
+    display: flex;
+    flex-direction: column; /* Arrange children in a column */
+    align-items: flex-start; /* Align children to the start of the cross axis */
+  }
+  
+  .header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between; /* Distribute space between items */
+    padding: 10px;
+    box-sizing: border-box;
   }
 
 .container {
@@ -30,16 +36,154 @@ body {
     color: #0a2682;
 }
 
+h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
 h2 {
-    font-size: 2.5em;
-    font-weight: 700;
-    margin: 20px 0;
-    padding-top: 20px;
-    text-align: top;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 0 10px;
+}
+
+#signin_panel {
+  padding: 4rem;
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 750px;
+  max-width: 100%;
+}
+
+#dropdown_panel {
+    padding: 4rem;
+    background-color: #fff;
+    border-radius: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 750px;
+    max-width: 100%;
   }
-  
-  .dropdown_container {
-    margin-top: 20px;
-    padding: 20px;
-    text-align: left;
+
+
+#moravian_star_image {
+    display: block;
+    margin: 0 auto; /* Centers the image */
+    width: 150px; /* Adjust the width as needed */
+    height: auto; /* Maintains the aspect ratio */
+}
+
+
+#login_button {
+  background-color: #0c37c2;
+  color: white;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+#login_button:hover {
+  background-color: #0a2682;
+}
+
+#login_button:active {
+  background-color: #0a2682;
+}
+
+#login_button:focus {
+  outline: none;
+}
+
+#signup_button {
+  background-color: #0c37c2;
+  color: white;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+#signup_button:hover {
+  background-color: #0a2682;
+}
+
+#signup_button:active {
+  background-color: #0a2682;
+}
+
+#signup_button:focus {
+  outline: none;
+}
+
+@keyframes colorShift {
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#submit_button {
+  background-color: #0c37c2;
+  color: white;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+#submit_button:hover {
+  background-color: #0a2682;
+}
+
+#submit_button:active {
+  background-color: #0a2682;
+}
+
+#submit_button:focus {
+  outline: none;
+}
+
+#moraviyum_new_user {
+  font-family: poppins;
+  color: #0a2682;
+}
+
+#username_input {
+  padding: 15px;
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dropdown_container {
+    padding: 4rem;
+    background-color: #fff;
+    border-radius: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 750px;
+    max-width: 100%;
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+}
