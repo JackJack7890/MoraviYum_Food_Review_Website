@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoggedInPage</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/review_style.css">
 </head>
 <body>
 
@@ -18,21 +18,22 @@
     <div id="dropdown_panel" style="display: none;">
         <h2>Select Your Preferences</h2>
         <div class="dropdown_container">
-            <label for="dropdown1">Option 1:</label>
-            <select id="dropdown1">
-                <option value="B&G">B&G</option>
-                <option value="Cru5h">Cru5h</option>
-                <option value="Garbanzos">Garbanzos</option>
-                <option value="Hissho Sushi">Hissho Sushi</option>
-            </select>
-
-            <label for="dropdown2">Option 2:</label>
-            <select id="dropdown2">
-                <option value="Delights">Delights</option>
-                <option value="Starbucks">Starbucks</option>
-                <option value="Zime">Zime</option>
-                <option value="Natural">Natural</option>
-            </select>
+            <div class = "dropdown-item">
+                <button id="activateDropdown1">B & G</button>
+                <select id="dropdown1">
+                    <option value="Cru5h">Cru5h</option>
+                    <option value="Garbanzos">Garbanzos</option>
+                    <option value="Hissho Sushi">Hissho Sushi</option>
+                </select>
+            </div>
+            <div class = "dropdown-item">
+                <button id="activateDropdown2">Delight's Cafe</button>
+                <select id="dropdown2">
+                    <option value="Starbucks">Starbucks</option>
+                    <option value="Zime">Zime</option>
+                    <option value="Natural">Natural</option>
+                </select>
+            </div>
         </div>
     </div>
 
@@ -43,8 +44,12 @@
             document.getElementById('welcome_panel').style.display = 'none';
             // Show the dropdown panel
             document.getElementById('dropdown_panel').style.display = 'block';
+            document.getElementById('dropdown1').style.display = 'none';
+            document.getElementById('dropdown2').style.display = 'none';
+            
         }, 3000);  // 3000 milliseconds = 3 seconds
     </script>
+    <script src="/static/review_app.js"></script>
 
 </body>
 </html>
