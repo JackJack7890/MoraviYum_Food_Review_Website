@@ -94,11 +94,14 @@ h2 {
     align-items: top;
 }
 
-.dropdown-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 10px;
+
+
+.dropdown-item:hover select {
+  display: block; /* Show dropdown select on hover */
+  position: absolute; /* Position dropdown below the button */
+  top: 100%; /* Position it right below the button */
+  left: 0; /* Align to the left of the button */
+  z-index: 10; /* Ensure it appears above other elements */
 }
 
 @keyframes bounce {
@@ -189,4 +192,65 @@ h2 {
 #activateDropdown1:active, #activateDropdown2:active {
   background-color: #0e66c2; /* Even lighter blue when clicked */
   transform: translateY(1px); /* Slight downward movement on click */
+}
+
+/* Ensure the dropdown adjusts its width dynamically */
+select {
+  background-color: #fff;
+  color: #012e80;
+  border: 2px solid #012e80;
+  border-radius: 50px;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  appearance: none;
+  width: auto; /* Let the width auto-adjust based on content */
+  min-width: 120px; /* Optional: Minimum width to maintain structure */
+}
+
+/* Style the dropdown options */
+option {
+  background-color: #fff; /* Background color of options */
+  color: #012e80; /* Navy blue text */
+  padding: 10px; /* Add padding */
+  font-family: "Poppins", sans-serif; /* Same font family */
+
+}
+
+/* Hover effect for select */
+select:hover {
+  background-color: #f0f0f0; /* Light gray background on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+/* Add an icon for dropdown appearance */
+select::after {
+  content: '\25BC'; /* Down arrow icon */
+  font-size: 1rem;
+  color: #012e80;
+  position: absolute;
+  right: 15px;
+}
+
+
+/* Ensure the dropdown container resizes properly */
+.dropdown-item {
+  display: inline-block;
+  position: relative;
+}
+
+/* Ensure the button stays in place with proper padding */
+button {
+  background-color: #012e80;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #01358f; /* Slight hover effect */
 }
