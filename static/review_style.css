@@ -269,29 +269,37 @@ button:hover {
 
 #dropdown_panel {
   position: absolute; /* or fixed if you want it relative to the viewport */
-  top: 20%;
+  top: 23.5%;
   right: 30%;
   transform: translateX(-50%);
   width: 300px;
-  padding: 20px;
+  padding: 1px;
   font-size: 14px;
+  z-index: 1000;
 }
 
 #dropdown_panel h2 {
-  font-size: 16px; /* Reduces the size of the heading */
-  margin-bottom: 20px; /* Adds space below the heading */
+  font-size: 12px; /* Reduces the size of the heading */
+  margin-bottom: 10px; /* Adds space below the heading */
 }
 
 .dropdown-item {
-  margin-bottom: 8px; /* Adds space between dropdown items */
+  margin-bottom: 4px; /* Adds space between dropdown items */
 }
 
 button {
-  padding: 5px 10px; /* Shrinks button size */
-  font-size: 14px; /* Adjusts button text size */
+  padding: 2px 3px; /* Shrinks button size */
+  font-size: 12px; /* Adjusts button text size */
 }
 
 select {
-  font-size: 14px; /* Adjusts dropdown option text size */
-  width: 100%; /* Ensures the dropdown fits the container width */
+  font-size: 12px; /* Adjusts dropdown option text size */
+  width: 50%; /* Ensures the dropdown fits the container width */
+  z-index: 1000;
+}
+
+#logout_button_container {
+  position: absolute;
+  top: 11%;
+  right: 1.5%
 }
