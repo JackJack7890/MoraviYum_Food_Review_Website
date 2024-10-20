@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoggedInPage</title>
     <link rel="stylesheet" type="text/css" href="/static/review_style.css">
-    
 </head>
 <body>
     
+    <!-- Image container 1 -->
+    <div id="image_container">
+        <img src="/moravian_star.png" alt="moravian_star" id="moravian_star_image" style="width: 150px; height: auto;">>
+    </div>
+
 
     <!-- Welcome panel -->
     <div id="welcome_panel" class="fade-in">
@@ -17,13 +21,13 @@
     </div>
     
 
-     <!-- Dropdown options panel (initially hidden) -->
-     <div id="dropdown_panel" style="display: none;" class="dropdown_container">
+    <!-- Dropdown options panel (initially hidden) -->
+    <div id="dropdown_panel" style="display: none;" class="dropdown_container">
         <h2 id="select_preference">Select Your Preferences</h2>
         <div class="dropdown_container">
             <div class = "dropdown-item">
                 <button id="activateDropdown1">B & G</button>
-                <select id="dropdown1">
+                <select id="dropdown1" style="display: none;">
                     <option value="Cru5h">Cru5h</option>
                     <option value="Garbanzos">Garbanzos</option>
                     <option value="Hissho Sushi">Hissho Sushi</option>
@@ -31,7 +35,7 @@
             </div>
             <div class = "dropdown-item">
                 <button id="activateDropdown2">Delight's Cafe</button>
-                <select id="dropdown2">
+                <select id="dropdown2" style="display: none;">
                     <option value="Starbucks">Starbucks</option>
                     <option value="Zime">Zime</option>
                     <option value="Natural">Natural</option>
@@ -40,19 +44,98 @@
         </div>
     </div>
 
+    <style>
+        .scrollable-container {
+        max-height: 400px;
+        overflow-y: scroll;
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 100%; /* Adjust width as necessary */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .review-table {
+        width: 100%;  /* Table takes full width of the container */
+    }
+    </style>
+
+    <div id = "scrollable-container" class = "scrollable-container">
+        <div id="review_container" class="fade-in">
+            <h2 id="review_header">Reviews</h2>
+            <div id="review_list">
+                <!-- Reviews will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <button id="show_review_form">Add Review</button>
+
+    <h3>Add a Review</h3>
+    <form id="reviewForm">
+    <input type="hidden" id="user_id" value="{{ user_handle }}">
+
+    <label for="food">Food ID:</label>
+    <input type="text" id="food" required><br>
+
+    <label for="rating">Rating (1-5):</label>
+    <input type="number" id="rating" min="1" max="5" required><br>
+
+    <label for="review_text">Review:</label>
+    <textarea id="review_text" rows="4" required></textarea><br>
+
+    <button type="submit">Submit Review</button>
+    </form>
+
+ <!-- Image container 2 (initially hidden) -->
+ <div id="image_container2" style="display: none;">
+    <img src="/user_profile.png" alt="user_profile" id="user_profile_image" style="width: 150px; height: auto;">>
+</div>
+
+<div id="logout_button_container" style="display: none; margin-top: 10px;">
+    <button id="logout_button">Log Out</button>
+</div>
+
 
     <script>
         // Wait for 3 seconds, then switch from the welcome panel to the dropdown panel
         setTimeout(function() {
             // Hide the welcome panel
             document.getElementById('welcome_panel').style.display = 'none';
+
             // Show the dropdown panel
             document.getElementById('dropdown_panel').style.display = 'block';
+            
+            // Show the first image container
+            document.getElementById('image_container').style.display = 'block';
+
+            // Show the second image container
+            document.getElementById('image_container2').style.display = 'block';
+
+            document.getElementById('review_container').style.display = 'block';
+
+            document.getElementById('reviewForm').style.display = 'block';
+
+            // Ensure dropdowns are hidden initially
             document.getElementById('dropdown1').style.display = 'none';
             document.getElementById('dropdown2').style.display = 'none';
             
         }, 3000);  // 3000 milliseconds = 3 seconds
     </script>
+
     <script src="/static/review_app.js"></script>
 
 </body>

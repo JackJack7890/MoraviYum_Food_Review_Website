@@ -15,9 +15,9 @@ function submit() {
             user_handle: user_handle
         }),
     })
-    var path = window.location
-    var endpoint = "reviw"
-    return `${path}.origin/${endpoint}`
+    //var path = window.location
+    //var endpoint = "review"
+    //return `${path}.origin/${endpoint}`
 }
 
 submit_button.addEventListener('click', () => {
