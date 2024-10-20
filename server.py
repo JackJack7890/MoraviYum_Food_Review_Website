@@ -77,7 +77,12 @@ def get_user_handle(email):
     cursor.close()
     connection.close()
 
-    return user_handle[0]
+    if user_handle is None:
+        # Handle case where no user_handle is found for the email
+        print(f"No user_handle found for email: {email}")
+        abort(404)  # Optionally return a 404 error or handle it differently
+    else:
+        return user_handle[0]
 
 @app.route('/new_user')
 @login_is_required # Decorator to check if the user is logged in

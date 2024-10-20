@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,700");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -11,24 +11,37 @@ body {
     animation: colorShift 17s ease infinite;
     font-family: "Poppins", sans-serif;
     margin: 0;
-    overflow: hidden;
+    height: 100vh; /* Full height for centering */
     display: flex;
-    flex-direction: column; /* Arrange children in a column */
-    align-items: flex-start; /* Align children to the start of the cross axis */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden;
+}
+
+@keyframes colorShift {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .header {
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header {
     display: flex;
     width: 100%;
     justify-content: space-between; /* Distribute space between items */
     padding: 10px;
     box-sizing: border-box;
-  }
+}
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 #moraviyum_welcome {
@@ -37,28 +50,18 @@ body {
 }
 
 h1 {
-  font-size: 2.5em;
-  font-weight: 700;
-  margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 h2 {
-  font-size: 2em;
-  font-weight: 700;
-  margin-bottom: 0 10px;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 0 10px;
 }
 
 #signin_panel {
-  padding: 4rem;
-  background-color: #fff;
-  border-radius: 100px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  width: 750px;
-  max-width: 100%;
-}
-
-#dropdown_panel {
     padding: 4rem;
     background-color: #fff;
     border-radius: 100px;
@@ -66,17 +69,124 @@ h2 {
     overflow: hidden;
     width: 750px;
     max-width: 100%;
-  }
-  
+}
+
+#dropdown_panel {
+  padding: 4rem;
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 750px;
+  max-width: 100%;
+  margin: 20px auto; /* Center horizontally */
+  position: relative; /* Ensure it's positioned relative to the page */
+  top: 0; /* Align to the top of the page */
+  left: 0;
+  right: 0;
+  transform: none; /* Remove any centering transform */
+}
+
 .dropdown_container {
-     display: flex;
-     justify-content: space-between;
-     margin: 20px 0;
-  }
-  
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    align-items: top;
+}
+
 .dropdown-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 10px;
-  }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Style for the welcome panel */
+#welcome_panel {
+    text-align: center;
+    padding: 50px;
+}
+
+#welc_yum {
+    color: #e3e4ea;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#loading_message {
+    color: #e3e4ea;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.dot {
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+
+.dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#distributionPieChart {
+    margin-left: 20%;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 0;
+    }
+}
+
+/* Style for the dropdown buttons */
+#activateDropdown1, #activateDropdown2 {
+  background-color: #012e80; /* Navy background */
+  color: #fff; /* White text */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Add some padding for a larger button */
+  border-radius: 50px; /* Rounded corners */
+  font-size: 1.2rem; /* Make the text larger */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect */
+#activateDropdown1:hover, #activateDropdown2:hover {
+  background-color: #0a53a7; /* Slightly lighter blue on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  transform: translateY(-3px); /* Slight upward movement */
+}
+
+/* Active state for button press */
+#activateDropdown1:active, #activateDropdown2:active {
+  background-color: #0e66c2; /* Even lighter blue when clicked */
+  transform: translateY(1px); /* Slight downward movement on click */
+}
