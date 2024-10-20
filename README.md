@@ -20,7 +20,7 @@ Once logged in, the user can then select one of two dining locations from the Mo
 
 Once a vendor is selected, they can then select the food they want to leave a review and leave a rating from 1-5.
 
-[ IMAGE HERE ]
+![reviewpage](MoraviYum_review.png)
 
 ## What Was Used
 - HTML, CSS, JavaScript for web application and UI
