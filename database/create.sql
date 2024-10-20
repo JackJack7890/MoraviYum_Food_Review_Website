@@ -24,6 +24,11 @@ CREATE TABLE IF NOT EXISTS foods (
     avg_rating FLOAT
 );
 
+CREATE TABLE IF NOT EXISTS images (
+    food_id INT(5),
+    image_url VARCHAR(500)
+);
+
 CREATE TABLE IF NOT EXISTS reviews (
     review_id INT(5),
     user_id VARCHAR(50),
