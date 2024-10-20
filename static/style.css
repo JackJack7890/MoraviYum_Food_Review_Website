@@ -31,12 +31,6 @@ body {
     color: #0a2682;
 }
 
-h1 {
-  font-size: 2.5em;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
 h2 {
   font-size: 2em;
   font-weight: 700;
@@ -231,19 +225,67 @@ h2 {
   background-color: #0a2682;
 }
 
-#submit_button:focus {
-  outline: none;
-}
-
 #moraviyum_new_user {
-  font-family: poppins;
   color: #0a2682;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 #username_input {
   padding: 15px;
-  width: 100%;
+  width: 80%;
   margin-top: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 1.1em;
 }
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #0a2682;
+}
+
+.signin_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 0 auto;
+}
+
+#username_input:focus {
+  border-color: #0c37c2;
+  box-shadow: 0 0 8px rgba(12, 55, 194, 0.3);
+}
+
+#submit_button:hover {
+  background-color: #0c5ec2;
+}
+
+#submit_button:focus {
+  box-shadow: 0 0 10px rgba(12, 55, 194, 0.5);
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.signin_container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+@media (max-width: 600px) {
+  .signin_container {
+      width: 90%;
+      padding: 20px;
+  }
+}
+
