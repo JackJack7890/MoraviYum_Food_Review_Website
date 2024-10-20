@@ -4,6 +4,9 @@ An online web application designed for Moravian University students to help each
 
 Project designed for the Lehigh Valley Collegiate Hackathon 2024.
 
+## Video Demonstration
+[MoraviaYum Demo - Lehigh Valley Hackathon 2024](https://youtu.be/-onicEIKR9M)
+
 ## Contributers
 - [Christine Colvin](https://github.com/christinecolvin)
 - [Jack Drabic](https://github.com/JackJack7890)
