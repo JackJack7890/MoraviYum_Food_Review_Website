@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoggedInPage</title>
     <link rel="stylesheet" type="text/css" href="/static/review_style.css">
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
     
+    <div id="image_container"></div>
+        <img src="/moravian_star.png" alt="moravian_star" id="moravian_star_image">
+    </div>
 
     <!-- Welcome panel -->
     <div id="welcome_panel" class="fade-in">
@@ -19,6 +21,7 @@
 
     <!-- Dropdown options panel (initially hidden) -->
     <div id="dropdown_panel" style="display: none;" class="dropdown_container">
+
         <h2 id="select_preference">Select Your Preferences</h2>
         <div class="dropdown_container">
             <div class = "dropdown-item">
@@ -40,6 +43,9 @@
         </div>
     </div>
 
+    
+
+
     <script>
         // Wait for 3 seconds, then switch from the welcome panel to the dropdown panel
         setTimeout(function() {
@@ -47,6 +53,7 @@
             document.getElementById('welcome_panel').style.display = 'none';
             // Show the dropdown panel
             document.getElementById('dropdown_panel').style.display = 'block';
+            document.getElementById('image_container').style.display = 'block';
             document.getElementById('dropdown1').style.display = 'none';
             document.getElementById('dropdown2').style.display = 'none';
             
