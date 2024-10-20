@@ -14,7 +14,6 @@
     </div>
 
 
-
     <!-- Welcome panel -->
     <div id="welcome_panel" class="fade-in">
         <h1 id="welc_yum">Welcome to MoraviYum!</h1>
@@ -24,7 +23,6 @@
 
     <!-- Dropdown options panel (initially hidden) -->
     <div id="dropdown_panel" style="display: none;" class="dropdown_container">
-
         <h2 id="select_preference">Select Your Preferences</h2>
         <div class="dropdown_container">
             <div class = "dropdown-item">
@@ -75,7 +73,7 @@
     }
     </style>
 
-    <div class = "scrollable-container">
+    <div id = "scrollable-container" class = "scrollable-container">
         <div id="review_container" class="fade-in">
             <h2 id="review_header">Reviews</h2>
             <div id="review_list">
@@ -111,6 +109,7 @@
     <button id="logout_button">Log Out</button>
 </div>
 
+
     <script>
         // Wait for 3 seconds, then switch from the welcome panel to the dropdown panel
         setTimeout(function() {
@@ -125,6 +124,10 @@
 
             // Show the second image container
             document.getElementById('image_container2').style.display = 'block';
+
+            document.getElementById('review_container').style.display = 'block';
+
+            document.getElementById('reviewForm').style.display = 'block';
 
             // Ensure dropdowns are hidden initially
             document.getElementById('dropdown1').style.display = 'none';
