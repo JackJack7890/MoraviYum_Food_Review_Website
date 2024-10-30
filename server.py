@@ -16,7 +16,7 @@ from functools import wraps
 from flask import Flask, abort, jsonify, redirect, request, session, render_template, url_for
 from flask_session import Session
 
-dotenv.load_dotenv
+dotenv.load_dotenv()
 if not os.getenv('FLASK_SECRET_KEY'):
     print('Please set FLASK_SECRET_KEY in .env file')
 
