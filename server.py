@@ -306,7 +306,7 @@ def connectToMySQL():
     MYSQL_USERNAME = os.getenv('MYSQL_USERNAME')
     MYSQL_PASSWORD = os.getenv('MYSQL_PASSWORD')
     MYSQL_HOST = os.getenv('MYSQL_HOST')
-    MYSQL_DB = os.getenv('MYSQL_DB')
+    MYSQL_DB = os.getenv('MYSQL_DATABASE')
 
     cnx = mysql.connector.connect(user=MYSQL_USERNAME, password=MYSQL_PASSWORD,
                                   host=MYSQL_HOST,
