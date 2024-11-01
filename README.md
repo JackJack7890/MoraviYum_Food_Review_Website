@@ -29,7 +29,7 @@ Once a vendor is selected, they can then select the food they want to leave a re
 - HTML, CSS, and JavaScript were used for the UI
 - A MySQL database is used to store user accounts, food data, and review information
 - Images are stored in an S3 bucket
-- Google OAUTH is used for ensuring only Moravian students are allowed to sign-in
+- Google OAUTH is utilized for ensuring only Moravian students are allowed to sign-in
 
 ## Accomplishments
 - Laying the foundations and functionality of the vendor/food selection and review
